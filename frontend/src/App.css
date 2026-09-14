@@ -1,0 +1,139 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: #0f1117;
+  color: #e8e8ec;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+}
+
+.app {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 40px 20px;
+}
+
+.header h1 {
+  font-size: 2.2rem;
+  margin: 0;
+  background: linear-gradient(90deg, #7c5cff, #00d4c4);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.header p {
+  color: #9a9ab0;
+  margin-top: 6px;
+}
+
+.upload-card {
+  background: #1a1d29;
+  border: 1px solid #2a2d3d;
+  border-radius: 14px;
+  padding: 24px;
+  margin: 28px 0;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.upload-card input[type="file"],
+.upload-card input[type="email"] {
+  background: #12141c;
+  border: 1px solid #2a2d3d;
+  border-radius: 8px;
+  padding: 10px 12px;
+  color: #e8e8ec;
+  font-size: 0.95rem;
+}
+
+.upload-card button {
+  background: linear-gradient(90deg, #7c5cff, #00d4c4);
+  border: none;
+  border-radius: 8px;
+  padding: 12px;
+  font-weight: 600;
+  color: #0f1117;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: opacity 0.2s;
+}
+
+.upload-card button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.meetings-list {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.empty {
+  color: #6b6b80;
+  text-align: center;
+  padding: 40px 0;
+}
+
+.meeting-card {
+  background: #1a1d29;
+  border: 1px solid #2a2d3d;
+  border-radius: 12px;
+  padding: 18px 20px;
+}
+
+.meeting-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.meeting-header h3 {
+  margin: 0;
+  font-size: 1rem;
+  font-weight: 500;
+  color: #d0d0dc;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  max-width: 400px;
+}
+
+.badge {
+  font-size: 0.72rem;
+  padding: 4px 10px;
+  border-radius: 999px;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  font-weight: 600;
+}
+
+.badge-uploaded { background: #3a3d4d; color: #b0b0c0; }
+.badge-processing, .badge-summarizing { background: #4a3d1a; color: #ffcf5c; }
+.badge-transcribed { background: #1a3a4a; color: #5cc8ff; }
+.badge-done { background: #1a4a2e; color: #5cff9c; }
+.badge-failed { background: #4a1a1a; color: #ff5c5c; }
+
+.meeting-body {
+  margin-top: 14px;
+  padding-top: 14px;
+  border-top: 1px solid #2a2d3d;
+  font-size: 0.9rem;
+  line-height: 1.5;
+}
+
+.meeting-body strong {
+  color: #9a9ab0;
+  font-size: 0.78rem;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+}
+
+.meeting-body p {
+  margin: 6px 0 14px 0;
+  color: #d0d0dc;
+  white-space: pre-wrap;
+}
