@@ -45,6 +45,11 @@ def upload_meeting(background_tasks: BackgroundTasks, file: UploadFile = File(..
 
     return meeting
 
+@app.get("/debug/last")
+def debug_last(db: Session = Depends(get_db)):
+    m = db.query(models.Meeting).order_by(models.Meeting.id.desc()).first()
+    return {"id": m.id, "email_to": m.email_to, "status": m.status}
+
 @app.get("/meetings", response_model=list[schemas.MeetingOut])
 def list_meetings(db: Session = Depends(get_db)):
     return db.query(models.Meeting).all()
