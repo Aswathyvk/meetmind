@@ -18,29 +18,15 @@
 ---
 
 ## 🏗️ Architecture
-React Frontend
-│
-│ POST /meetings/upload
-▼
-FastAPI Backend
-│
-│ triggers background task
-▼
-┌─────────────────────────────┐
-│ Processing Pipeline │
-│ │
-│ 1. faster-whisper │
-│ → transcribes audio │
-│ │
-│ 2. Groq API │
-│ → generates summary │
-│ + action items │
-│ │
-│ 3. Resend API │
-│ → emails the summary │
-└─────────────────────────────┘
-│
-▼
-SQLite Database
+
+```mermaid
+flowchart TD
+    A[React Frontend] -->|POST /meetings/upload| B[FastAPI Backend]
+    B -->|triggers background task| C[Processing Pipeline]
+    C --> D[1. faster-whisper<br/>transcribes audio]
+    D --> E[2. Groq API<br/>generates summary + action items]
+    E --> F[3. Resend API<br/>emails the summary]
+    B --> G[(SQLite Database<br/>status, transcript, summary, action items)]
+```
 (status, transcript,
 summary, action items)
